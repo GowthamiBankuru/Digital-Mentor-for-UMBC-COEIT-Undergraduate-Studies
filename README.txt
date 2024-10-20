@@ -8,7 +8,7 @@ Features
 •	Course Recommender: Get personalized course recommendations based on your interests and career goals.
 •	Academic Progress Tracker: Monitor GPA, completed credits, and in-progress courses.
 •	Career Accelerator: Discover internships, workshops, and extracurricular activities aligned with your career goals.
-•	Admin Dashboard: Review user feedback and analyze system performance for iterative improvements.
+•	Admin Dashboard: view available criteria used by model to recommend students who is fit for the program. 
  
 System Requirements
 You can install all the necessary libraries from req.txt using the command:
@@ -52,37 +52,12 @@ pip install -r req.txt
 streamlit run app.py
 5.	Interact with the application: Open your browser and navigate to the local URL provided by Streamlit. From the sidebar, you can navigate through different tools such as the Admission Checker, Course Recommender, Academic Progress Tracker, Career Accelerator, and the Admin Dashboard.
  
-How to Use Each Feature
-1.	Admission Checker:
-Enter your academic information (e.g., high school GPA, SAT and ACT scores).
-Receive a prediction of your likelihood of being admitted to a UMBC COEIT program.
-Review any areas where your scores may need improvement.
-2.	Course Recommender:
-Input your academic interests and career goals.
-Upload your transcript to get personalized course suggestions.
-View a comparison of the recommended courses.
-3.	Academic Progress Tracker:
-Select your name from the list.
-View your GPA, completed credits, and courses in progress.
-Optionally update your academic progress manually.
-4.	Career Accelerator:
-Select your career interests.
-Receive suggestions for relevant extracurricular activities, internships, and workshops.
-5.	Admin Dashboard:
-Review user feedback and transcript uploads.
-Visualize the confidence scores of the admission predictions and course recommendations.
- 
 Project Contributions
-This project was developed to provide UMBC students with personalized academic and career guidance. It integrates multiple datasets and machine learning techniques to deliver accurate recommendations. Any feedback or contributions are welcome to improve the system further.
-For any issues or contributions, please contact [your-email@example.com].
+This project was developed to provide UMBC students with personalized academic and career guidance. It integrates multiple datasets and machine learning techniques to deliver accurate recommendations. 
+
  
 Future Enhancements
 •	Integrating additional datasets to refine recommendations and predictions.
 •	Improving the machine learning models for greater accuracy.
 •	Expanding the Career Accelerator tool to include more career-focused opportunities.
-•	Adding authentication and user account management for a more personalized experience.
- 
-Acknowledgments
-Special thanks to the UMBC COEIT for providing the datasets and support throughout the project development.
- 
-This README.txt serves as a comprehensive guide for running, understanding, and contributing to the Digital Mentor for UMBC Undergraduate Studies project.
+•	Adding authentication for admins to a more professional experience.
