@@ -2,6 +2,7 @@ Digital-Mentor-for-UMBC-COEIT-Undergraduate-Studies
 
 Project Overview
 The Digital Mentor is a personalized tool designed to assist undergraduate students at UMBC, particularly in the College of Engineering and Information Technology (COEIT). It provides personalized academic recommendations, admission predictions, course suggestions, and progress tracking, all in one platform. The project is built using Streamlit for an interactive user interface and leverages machine learning models to provide data-driven recommendations.
+
 Features
 •	Admission Checker: Estimate the likelihood of admission to UMBC based on academic performance and standardized test scores.
 •	Course Recommender: Get personalized course recommendations based on your interests and career goals.
@@ -10,19 +11,15 @@ Features
 •	Admin Dashboard: Review user feedback and analyze system performance for iterative improvements.
  
 System Requirements
-
 You can install all the necessary libraries from req.txt using the command:
-
 pip install -r req.txt
  
 File Structure
-
 Technical Stack: for the Digital Mentor for UMBC Undergraduate Studies application consists of the following technologies:
 
 I am using Git, to manage and collaborate my source code.
 
 Front-end Framework:
-
 •	Streamlit: I have used it to build the user interface, which allows users to interact with the application, upload data, receive predictions, and provide feedback.
 •	PIL (Python Imaging Library): Used for handling image files and displaying icons for better user experience.
 
@@ -57,23 +54,23 @@ streamlit run app.py
  
 How to Use Each Feature
 1.	Admission Checker:
-o	Enter your academic information (e.g., high school GPA, SAT/ACT scores).
-o	Receive a prediction of your likelihood of being admitted to a UMBC COEIT program.
-o	Review any areas where your scores may need improvement.
+Enter your academic information (e.g., high school GPA, SAT/ACT scores).
+Receive a prediction of your likelihood of being admitted to a UMBC COEIT program.
+Review any areas where your scores may need improvement.
 2.	Course Recommender:
-o	Input your academic interests and career goals.
-o	Upload your transcript to get personalized course suggestions.
-o	View a comparison of the recommended courses.
+Input your academic interests and career goals.
+Upload your transcript to get personalized course suggestions.
+View a comparison of the recommended courses.
 3.	Academic Progress Tracker:
-o	Select your name from the list.
-o	View your GPA, completed credits, and courses in progress.
-o	Optionally update your academic progress manually.
+Select your name from the list.
+View your GPA, completed credits, and courses in progress.
+Optionally update your academic progress manually.
 4.	Career Accelerator:
-o	Select your career interests.
-o	Receive suggestions for relevant extracurricular activities, internships, and workshops.
+Select your career interests.
+Receive suggestions for relevant extracurricular activities, internships, and workshops.
 5.	Admin Dashboard:
-o	Review user feedback and transcript uploads.
-o	Visualize the confidence scores of the admission predictions and course recommendations.
+Review user feedback and transcript uploads.
+Visualize the confidence scores of the admission predictions and course recommendations.
  
 Project Contributions
 This project was developed to provide UMBC students with personalized academic and career guidance. It integrates multiple datasets and machine learning techniques to deliver accurate recommendations. Any feedback or contributions are welcome to improve the system further.
