@@ -1,4 +1,4 @@
-Digital-Mentor-for-UMBC-COEIT-Undergraduate-Studies
+**Digital-Mentor-for-UMBC-COEIT-Undergraduate-Studies**
 
 Project Overview
 The Digital Mentor is a personalized tool designed to assist undergraduate students at UMBC, particularly in the College of Engineering and Information Technology (COEIT). It provides personalized academic recommendations, admission predictions, course suggestions, and progress tracking, all in one platform. The project is built using Streamlit for an interactive user interface and leverages machine learning models to provide data-driven recommendations.
@@ -50,11 +50,11 @@ cd DigitalMentorUS
 pip install -r req.txt
 4.	Run the Streamlit app: Start the Streamlit application by running:
 streamlit run app.py
-5.	Interact with the application: Open your browser and navigate to the local URL provided by Streamlit (usually http://localhost:8501). From the sidebar, you can navigate through different tools such as the Admission Checker, Course Recommender, Academic Progress Tracker, Career Accelerator, and the Admin Dashboard.
+5.	Interact with the application: Open your browser and navigate to the local URL provided by Streamlit. From the sidebar, you can navigate through different tools such as the Admission Checker, Course Recommender, Academic Progress Tracker, Career Accelerator, and the Admin Dashboard.
  
 How to Use Each Feature
 1.	Admission Checker:
-Enter your academic information (e.g., high school GPA, SAT/ACT scores).
+Enter your academic information (e.g., high school GPA, SAT and ACT scores).
 Receive a prediction of your likelihood of being admitted to a UMBC COEIT program.
 Review any areas where your scores may need improvement.
 2.	Course Recommender:
