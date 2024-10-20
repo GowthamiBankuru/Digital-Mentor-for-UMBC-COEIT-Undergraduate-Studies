@@ -313,18 +313,6 @@ def course_recommendation():
         feedback = st.text_area('Please provide your feedback so we can improve!')
         submitted_feedback = st.form_submit_button('Submit feedback')
 
-        if submitted_feedback:
-            transcript_filename = transcript_file.name if transcript_file else None
-            feedback_row = pd.DataFrame([[name, country, mail, course_suggested, feedback, transcript_filename]],columns=['Name', 'Country', 'Mail', 'course_suggested', 'Feedback', 'Transcript'])
-            header = not os.path.exists('feedback.csv')
-            feedback_row.to_csv('feedback.csv', mode='a', header=header, index=False)
-            if transcript_file:
-               with open(os.path.join('uploaders', transcript_file.name), "wb") as f:
-                  f.write(transcript_file.getbuffer())    
-            else:
-                 st.error("Please Upload the transcript to proceed")
-            st.success("Thank you for your feedback!")
-
 def career_opportunities():
     import streamlit as st
     import pandas as pd
@@ -401,33 +389,6 @@ def academic_progress():
     student_name = st.selectbox("Select your name", options=unique_names)
     student_data = progress_dataset[progress_dataset['Name'] == student_name].iloc[0]
 
-    # Main Button to display academic progress
-    if st.button('View Academic Progress'):
-        with st.spinner('Loading your academic progress...'):
-            st.markdown(f"<div style='background-color:#F0F0F0; padding:10px; border-radius:10px;'>", unsafe_allow_html=True)
-            st.markdown(f"### {student_name}'s Academic Progress", unsafe_allow_html=True)
-            st.markdown(f"**Program**: `{student_data['Program']}`", unsafe_allow_html=True)
-            st.markdown(f"**Department**: `{student_data['Department']}`", unsafe_allow_html=True)
-            st.markdown(f"### GPA: `{student_data['GPA']}`", unsafe_allow_html=True)
-            st.markdown(f"### Credits Earned: `{student_data['TotalCredits']}` / `{student_data['RequiredCredits']}`", unsafe_allow_html=True)
-            st.markdown("### Completed Courses", unsafe_allow_html=True)
-            st.markdown(f"- {', '.join(student_data['CompletedCourses'].split(', '))}", unsafe_allow_html=True)
-            st.markdown("### In-Progress Courses", unsafe_allow_html=True)
-            st.markdown(f"- {', '.join(student_data['InProgressCourses'].split(', '))}", unsafe_allow_html=True)           
-            st.markdown("</div>", unsafe_allow_html=True)
-
-    # Update academic progress
-    if st.checkbox("Update Academic Progress"):
-        updated_credits = st.number_input("Update Credits Earned", min_value=0, max_value=150, value=student_data['TotalCredits'])
-        updated_completed_courses = st.text_area("Update Completed Courses", value=student_data['CompletedCourses'])
-        updated_inprogress_courses = st.text_area("Update In-Progress Courses", value=student_data['InProgressCourses'])
-
-        if st.button("Save Updates"):
-            # save updated data
-            student_data['TotalCredits'] = updated_credits
-            student_data['CompletedCourses'] = updated_completed_courses
-            student_data['InProgressCourses'] = updated_inprogress_courses   
-
 # Function for Admin
 def admin():
     import streamlit as st
@@ -473,41 +434,6 @@ def admin():
             st.write("Checked items processed:", checked_feedback)
     else:
         st.write("No feedback yet.")
-    
-    st.markdown("## Model Performance Dashboard")
-    def plot_admission_confidence(df):
-        fig = px.line(df, x='Name', y='Confidence', markers=True, title='Admission Confidence by Candidate')
-        fig.update_xaxes(title_text='Candidate Name')
-        fig.update_yaxes(title_text='Confidence Level')
-        fig.update_traces(textposition='top center')
-        st.plotly_chart(fig, use_container_width=True)
-
-    def plot_course_confidence(df):
-        fig = px.line(df, x='Name', y='Confidence', color='Course', markers=True, title='Course Recommendation Confidence by Candidate')
-        fig.update_xaxes(title_text='Candidate Name')
-        fig.update_yaxes(title_text='Confidence Level')
-        fig.update_traces(textposition='top center')
-        st.plotly_chart(fig, use_container_width=True)
-    # Load and plot admission confidence scores
-    try:
-        admission_df = pd.read_csv('admission_confidence.csv')
-        # st.markdown("## Admission Confidence Scores")
-        if not admission_df.empty:
-            plot_admission_confidence(admission_df)
-        else:
-            st.write("No admission data yet.")
-    except FileNotFoundError:
-        st.write("No admission data found.")
-
-    # Load and plot course confidence scores
-    try:
-        course_df = pd.read_csv('course_confidence.csv')
-        if not course_df.empty:
-            plot_course_confidence(course_df)
-        else:
-            st.write("No course data yet.")
-    except FileNotFoundError:
-        st.write("No course data found.")
                
 # Main function to map pages
 page_names_to_funcs = {
