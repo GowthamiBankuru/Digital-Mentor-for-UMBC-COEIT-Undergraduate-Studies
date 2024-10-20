@@ -1,0 +1,5 @@
+StudentID,Name,Program,Department,GPA,TotalCredits,RequiredCredits,CompletedCourses,InProgressCourses
+1,Gowthami,Computer Science,Computer Science and Electrical,3.8,90,120,"Math 101, Physics 101, CS 101","Software Engineering, AI"
+2,Surya,Mechanical Engineering,Mechanical Engineering,3.5,75,120,"Chemistry 101, ME 102, Dynamics","Fluid Mechanics, Thermodynamics"
+3,Maya,Information Systems,Information Systems,3.6,85,120,"IS 101, Cybersecurity 101, Networking 201","Database Systems, Web Development"
+4,David,Electrical Engineering,Computer Science and Electrical,3.4,100,120,"Electrical 101, Math 201, CS 101","Digital Systems, Control Systems"
